@@ -16,4 +16,10 @@
         <start-class>com.xx.webapps.api.main.WebappsApiBidMain</start-class>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+    </dependencies>
 </project>

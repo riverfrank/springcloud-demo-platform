@@ -17,3 +17,9 @@ eureka:
 feign:
   hystrix:
     enabled: true
+# 全局配置
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 20

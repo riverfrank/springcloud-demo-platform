@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @FeignClient(name = "user-server-provider",fallback = UserClientFallBack.class,path = "/users")
 public interface UserClient {
+
+
     @GetMapping("/hello")
     String hello();
 }
