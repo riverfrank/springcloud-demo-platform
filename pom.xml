@@ -25,9 +25,9 @@
 
     <modules>
         <module>eureka-server</module>
-        <module>user-server</module>
         <module>platform-app</module>
-        <module>enterprise-server</module>
+        <module>platform-common</module>
+        <module>platform-server</module>
     </modules>
 
     <dependencies>
@@ -41,9 +41,16 @@
         <!--        </dependency>-->
 
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
