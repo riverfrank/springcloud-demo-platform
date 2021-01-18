@@ -8,8 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <version>1.0-SNAPSHOT</version>
 
     <artifactId>enterprise-server-api</artifactId>
 
-
+    <properties>
+        <start-class>com.xx.webapps.api.main.WebappsApiBidMain</start-class>
+    </properties>
 </project>
