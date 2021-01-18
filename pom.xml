@@ -25,6 +25,9 @@
 
     <modules>
         <module>eureka-server</module>
+        <module>user-server</module>
+        <module>platform-app</module>
+        <module>enterprise-server</module>
     </modules>
 
     <dependencies>
