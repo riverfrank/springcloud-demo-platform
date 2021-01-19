@@ -14,8 +14,6 @@
     <modules>
 <!--        <module>user-server-provider</module>-->
         <module>user-server-api</module>
-        <module>user-server-common</module>
-        <module>user-server-provider-v2</module>
     </modules>
 
 
