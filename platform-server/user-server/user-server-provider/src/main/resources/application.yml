@@ -4,7 +4,33 @@ spring:
   application:
     # 指定注册到eureka server上的服务名称
     name: user-server-provider
-
+  datasource:
+    url: jdbc:mysql://localhost:3306/platform?characterEncoding=utf8&useLocalSessionState=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: penglai
+      initialSize: 5
+      minIdle: 10
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 合并多个DruidDataSource的监控数据
+      useGlobalDataSourceStat: true
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: true
+          db-type: mysql
 eureka:
   client:
     service-url:

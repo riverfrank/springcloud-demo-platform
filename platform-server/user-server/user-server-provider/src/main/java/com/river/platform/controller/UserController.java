@@ -3,12 +3,16 @@ package com.river.platform.controller;
 import cn.hutool.core.lang.Validator;
 import com.river.platfom.common.ResultBean;
 import com.river.platfom.common.util.ValidatedUtil;
+import com.river.platform.entity.User;
 import com.river.platform.service.IUserService;
+import com.river.platform.userapi.client.UserClient;
 import com.river.platform.userapi.dto.RegisterDTO;
+import com.river.platform.userapi.dto.UserDTO;
 import com.river.platform.userapi.dto.UserUpdateDTO;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +22,13 @@ import org.springframework.web.bind.annotation.*;
  **/
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController implements UserClient {
 
 
     @Autowired
     private IUserService userService;
 
+    @Override
     @ApiOperation(value = "注册用户")
     @ApiImplicitParams({
             @ApiImplicitParam(name="appId",paramType="header"),
@@ -38,6 +43,7 @@ public class UserController {
     }
 
 
+    @Override
     @ApiOperation(value = "更新用户信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name="appId",paramType="header"),
@@ -49,25 +55,18 @@ public class UserController {
         return ResultBean.success(userService.update(id,userUpdateDTO,null ));
     }
 
-
-    @ApiOperation(value = "启用用户")
+    @Override
+    @ApiOperation(value = "获取用户信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name="appId",paramType="header"),
             @ApiImplicitParam(name="userId",paramType="header")
     })
-    @PutMapping("/{id}/enable")
-    public ResultBean<Boolean> enableUser(@PathVariable(name = "id") Long id){
-        return ResultBean.success(userService.enableUser(id,null));
-    }
-
-    @ApiOperation(value = "停用用户")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="appId",paramType="header"),
-            @ApiImplicitParam(name="userId",paramType="header")
-    })
-    @PutMapping("/{id}/disable")
-    public ResultBean<Boolean> disableUser(@PathVariable(name = "id") Long id){
-        return ResultBean.success(userService.disableUser(id,null));
+    @GetMapping("/{id}")
+    public ResultBean<UserDTO> find(@PathVariable(name = "id") Long id){
+        User user = userService.getById(id);
+        UserDTO userDTO = new UserDTO();
+        BeanUtils.copyProperties(user,userDTO);
+        return ResultBean.success(userDTO);
     }
 
     @Deprecated
@@ -82,6 +81,7 @@ public class UserController {
         return ResultBean.success(userService.isRegisteredUser(mobile));
     }
 
+    @Override
     @GetMapping("/hello")
     public String hello() {
         return "hello every";
