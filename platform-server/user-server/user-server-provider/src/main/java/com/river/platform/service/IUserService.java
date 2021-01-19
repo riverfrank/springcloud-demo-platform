@@ -2,8 +2,8 @@ package com.river.platform.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.river.platform.entity.User;
-import com.river.platform.user.dto.RegisterDTO;
-import com.river.platform.user.dto.UserUpdateDTO;
+import com.river.platform.userapi.dto.RegisterDTO;
+import com.river.platform.userapi.dto.UserUpdateDTO;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

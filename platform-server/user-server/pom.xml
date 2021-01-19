@@ -12,7 +12,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-<!--        <module>user-server-provider</module>-->
+        <module>user-server-provider</module>
         <module>user-server-api</module>
     </modules>
 

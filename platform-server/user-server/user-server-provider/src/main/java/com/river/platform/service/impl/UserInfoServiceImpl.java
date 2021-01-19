@@ -4,8 +4,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.river.platform.entity.UserInfo;
 import com.river.platform.mapper.UserInfoMapper;
 import com.river.platform.service.IUserInfoService;
-import com.river.platform.user.dto.RegisterDTO;
-import com.river.platform.user.dto.UserUpdateDTO;
+import com.river.platform.userapi.dto.RegisterDTO;
+import com.river.platform.userapi.dto.UserUpdateDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

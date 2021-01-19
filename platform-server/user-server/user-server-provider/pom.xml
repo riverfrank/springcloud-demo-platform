@@ -42,7 +42,7 @@
         </dependency>
         <dependency>
             <groupId>com.river</groupId>
-            <artifactId>user-server-common</artifactId>
+            <artifactId>platform-common</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
