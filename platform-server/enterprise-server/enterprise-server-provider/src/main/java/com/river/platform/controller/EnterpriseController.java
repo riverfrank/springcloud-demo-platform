@@ -1,13 +1,10 @@
 package com.river.platform.controller;
 
-import com.river.platform.user.client.UserClient;
+import com.river.platform.userapi.client.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 
 /**

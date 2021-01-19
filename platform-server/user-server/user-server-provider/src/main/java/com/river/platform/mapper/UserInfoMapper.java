@@ -1,0 +1,18 @@
+package com.river.platform.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.river.platform.entity.UserInfo;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author river
+ * @since 2020-12-16
+ */
+@Mapper
+public interface UserInfoMapper extends BaseMapper<UserInfo> {
+
+}

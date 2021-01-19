@@ -1,6 +1,6 @@
-package com.river.platform.user.fallback;
+package com.river.platform.userapi.fallback;
 
-import com.river.platform.user.client.UserClient;
+import com.river.platform.userapi.client.UserClient;
 import org.springframework.stereotype.Component;
 
 /**

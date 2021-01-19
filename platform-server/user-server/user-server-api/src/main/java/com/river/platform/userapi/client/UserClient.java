@@ -1,9 +1,8 @@
-package com.river.platform.user.client;
+package com.river.platform.userapi.client;
 
-import com.river.platform.user.fallback.UserClientFallBack;
+import com.river.platform.userapi.fallback.UserClientFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author river
