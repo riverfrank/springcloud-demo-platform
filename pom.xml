@@ -24,10 +24,10 @@
     </properties>
 
     <modules>
-        <module>eureka-server</module>
         <module>platform-app</module>
         <module>platform-common</module>
         <module>platform-server</module>
+        <module>platform-base</module>
     </modules>
 
     <dependencyManagement>
